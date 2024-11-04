@@ -1,0 +1,13 @@
+---
+title: 'Middleware'
+description: 'Middleware is used to authenticate if the user is logged in or not, while accessing the specific pages of our application.'
+icon: 'middleware'
+---
+
+There is an middleware file in the `src/middleware` folder. In that file we have a function that checks if the user is logged in or not. If the user is not logged in, then the user is redirected to the login page. If the user is logged in, then the user is allowed to access the page.
+
+There is an array named as `ProtectedRoutes` that contains the routes that are protected.
+
+```js
+const ProtectedRoutes = ["/", "/dashboard/", "/campaigns/", '/home/'];
+```

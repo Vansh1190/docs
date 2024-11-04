@@ -1,0 +1,72 @@
+---
+title: 'Store'
+description: 'Easy Peasy is an npm package that is used to store the global states and actions of the project'
+icon: 'store'
+---
+
+Easy Peasy is an abstraction of Redux, providing a reimagined API that focuses on developer experience. It allows you to quickly and easily manage your state.
+
+## Why We Need Global State Management
+
+In a complex application, managing state can become challenging as the application grows. Global state management provides a centralized way to handle state across different components, making it easier to maintain and update the state consistently. Here are some reasons why global state management is essential:
+
+1. **Consistency**: With a global state, all components share the same state, ensuring that the data is consistent across the application.
+2. **Ease of Access**: Any component can access the global state without the need to pass props down through multiple levels of the component tree.
+3. **Simplified State Updates**: Actions and reducers in global state management libraries like Easy Peasy provide a clear and structured way to update the state, reducing the risk of bugs.
+4. **Scalability**: As the application grows, global state management helps in scaling the state management logic without significant refactoring.
+
+By using Easy Peasy, we leverage these benefits while enjoying a simplified and developer-friendly API for managing our application's state.
+
+## How we are using Easy Peasy .
+Inside `src/app/lib/store` folder, we have a file named as `store.js`. In that file we have created a store. it contains the global states and actions of the project.
+There is different states and actions for different features of the project.
+
+```js
+// State
+User: {},
+
+// Actions
+setUser: action((state, payload) => {
+    state.User = payload;
+}),
+
+```
+<Note>  
+**State:** is the name of the state that is used to store the data.
+
+**Actions:** are the functions that we are using to update the state.
+</Note>
+
+
+
+## How to use the store in the project.
+we need to wrap the app component with the store provider, to make the store available to the whole application. we made an `CustomStoreProvider` component to wrap the app component with the store provider and pass the store as a prop to the `CustomStoreProvider` component.
+
+```js
+import store from "src/app/lib/store";
+
+export default function RootLayout({ children }) {
+  return (
+    // ... other components     
+    <body>
+      <CustomStoreProvider store={store}>
+        // ... other components
+        {children}
+      </CustomStoreProvider>
+    </body>
+  );
+}
+```
+
+## How to use the state and actions in the project.
+we can use the state and actions in the project by using the `useStoreState` and `useStoreActions` hooks.
+
+```js
+import { useStoreState, useStoreActions } from "easy-peasy";
+
+const user = useStoreState((state) => state.User);
+const setUser = useStoreActions((actions) => actions.setUser);
+
+// ...
+
+```

@@ -1,8 +1,75 @@
 ---
 title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+description: 'Welcome to the Quick Start guide for the **Seller Side AdNet Campaign Manager**. This guide provides the steps to access the GitHub repository, clone the project, and set it up locally.'
 ---
+## Accessing the GitHub Repository
 
+The code for this project is hosted on GitHub. To access it:
+
+1. Visit the GitHub repository: [https://github.com/ondc-projects/Seller-Ads-App-Resturants](https://github.com/ondc-projects/Seller-Ads-App-Resturants).
+2. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/ondc-projects/Seller-Ads-App-Resturants
+   ```
+3. Navigate into the project directory:
+   ```bash
+   cd Seller-Ads-App-Resturants
+   ```
+## Installing Dependencies
+Make sure you have Node.js and npm installed on your machine. Then, install the required dependencies:
+```bash
+npm install
+```
+
+## Setting Up Environment Variables
+Create a .env file in the root directory and add the following environment variables:
+```bash
+NEXT_PUBLIC_API_URL= NEXT_PUBLIC_API_URL
+MONGODB_URI= MONGO_URI  
+RAZORPAY_KEY= RAZORPAY_KEY
+```
+Replace NEXT_PUBLIC_API_URL, MONGODB_URI, and RAZORPAY_KEY with the appropriate values.
+
+## Running the Development Server
+Once the dependencies are installed and environment variables are set up, start the development server:
+```bash
+npm run dev
+```
+
+## Updating Changes to Server
+Once the changes are made to the code, you can update the changes to the server by pushing the changes to the repository:
+<Warning>
+
+Note: Make sure to run the following commands before pushing the changes to the repository:
+</Warning>
+
+```bash 
+npm run build
+```
+
+Then, push the changes to the repository:
+
+```bash
+git add .
+git commit -m "your commit message"
+git push origin main
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Accordion icon="github" title="Clone your docs locally">
 ## Setup your development
 
 Learn how to update your docs locally and deploy them to the public.
@@ -84,3 +151,5 @@ Add content directly in your files with MDX syntax and React components. You can
 </Card>
 
 </CardGroup>
+
+</Accordion>

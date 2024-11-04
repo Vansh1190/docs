@@ -1,0 +1,100 @@
+---
+title: API Routes
+description: API Routes used in the project
+icon: 📡
+---
+
+## API List
+
+### Authentication Routes
+
+  <Card title="Login with email and password">
+    <ParamField path="POST" >
+
+    ```
+    /api/auth/login
+    ```
+
+    ```json Body
+    {
+        "email": "string",
+        "password": "string"
+    }
+    ``` 
+    </ParamField>
+  </Card>
+
+
+
+  <Card title="Signup with email and password">
+    <ParamField path="POST" >
+
+    ```
+    /api/auth/signup
+    ```
+
+    ```json Body
+    {
+            "firstName": "string",
+            "lastName": "string",
+            "email": "email",
+            "password": "string",
+            "storeGst": "string",
+            "storePan": "string",
+            "storeName": "string",
+            "storeLocation": "string",
+            "phone": "phone",
+            "receiveEmails": "boolean"
+    }
+    ``` 
+    </ParamField>
+  </Card>
+
+
+  <Card title="Create store">
+    <ParamField path="POST" >
+
+    ```
+    /api/auth/createStore
+    ```
+
+    ```json Body
+    {
+            "firstName": "string",
+            "lastName": "string",
+            "email": "email",
+            "password": "string",
+            "storeGst": "string",
+            "storePan": "string",
+            "storeName": "string",
+            "storeLocation": "string",
+            "phone": "phone",
+            "receiveEmails": "boolean"
+    }
+    ``` 
+    </ParamField>
+  </Card>
+
+
+
+<Card title="Fetch user data using cookie"> 
+    <ParamField path="POST" >
+
+    ```
+    /api/auth/fetchData
+    ```
+    </ParamField>
+</Card>
+
+
+
+### Store Routes
+
+`/api/createCampaign` - Create a campaign
+
+`/api/deleteStore` - Delete the store
+
+`/api/updateProfile` - Update the profile
+
+`/api/updateStore` - Update the Store 
+
